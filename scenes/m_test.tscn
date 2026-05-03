@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://vri0i6ast4xx"]
+
+[ext_resource type="Script" uid="uid://brnd0w2gkgt4h" path="res://mouse_postion_test.gd" id="1_mifdw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_df3f0"]
+
+[node name="m_test" type="Node2D" unique_id=1890501753]
+script = ExtResource("1_mifdw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1574905569]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1243823377]
+shape = SubResource("CircleShape2D_df3f0")
