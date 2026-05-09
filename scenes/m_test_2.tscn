@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://c440yqx4q8xmr"]
 
-[node name="m_test_2" type="Node2D" unique_id=1590348090]
+[ext_resource type="Script" uid="uid://c04lpqtkxxl2v" path="res://dan.gd" id="1_bnmo8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyvsx"]
+
+[node name="dan" type="CharacterBody2D" unique_id=1220845641]
+script = ExtResource("1_bnmo8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506646202]
+shape = SubResource("CircleShape2D_cyvsx")
