@@ -1,22 +1,27 @@
 extends CharacterBody2D
 
+signal health_depleted
 
-const SPEED = 30000.0
-const JUMP_VELOCITY = -400.0
-
-
-func _physics_process(delta: float) -> void:
-	
+var health = 100.0
 
 
+func _physics_process(delta):
+	const SPEED = 300.0
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = direction * SPEED
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_vector("left", "right", "up", "down")
-	
-	if direction:
-		velocity = direction * SPEED * delta
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
-		velocity.y = move_toward(velocity.y, 0, SPEED * delta)
 	move_and_slide()
+
+	#if velocity.length() > 0.0:
+		#%HappyBoo.play_walk_animation()
+	#else:
+		#%HappyBoo.play_idle_animation()
+
+	## Taking damage
+	#const DAMAGE_RATE = 6.0
+	#var overlapping_mobs = %HurtBox.get_overlapping_bodies()
+	#if overlapping_mobs:
+		#health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		#%HealthBar.value = health
+		#if health <= 0.0:
+			#health_depleted.emit()
