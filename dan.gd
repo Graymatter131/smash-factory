@@ -23,3 +23,7 @@ func _physics_process(delta):
 		#%HealthBar.value = health
 		#if health <= 0.0:
 			#health_depleted.emit()
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
